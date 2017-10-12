@@ -47,6 +47,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':common')
 
-    compile globalConfiguration.android.arouter
     compile globalConfiguration.android.arouter_annotationProcessor
+
+    compile globalConfiguration.android.butterknife_annotationProcessor
 }

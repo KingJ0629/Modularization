@@ -10,6 +10,10 @@ ext {
             // ARouter
             arouter: "com.alibaba:arouter-api:1.2.2",
             arouter_annotationProcessor: "com.alibaba:arouter-compiler:1.1.3",
+
+            // Butter Knife
+            butterknife: "com.jakewharton:butterknife:8.8.1",
+            butterknife_annotationProcessor: "com.jakewharton:butterknife-compiler:8.8.1",
     ]
 
 

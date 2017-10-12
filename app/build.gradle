@@ -38,4 +38,6 @@ dependencies {
 
     compile project(':life')
     compile project(':wallet')
+
+    compile globalConfiguration.android.butterknife_annotationProcessor
 }
