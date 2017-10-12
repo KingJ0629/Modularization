@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+          package="com.uama.happinesscommunity.common"
+>
+
+    <application
+        android:name="com.uama.happinesscommunity.CommonApplication"
+        android:allowBackup="true"
+                 android:label="@string/app_name"
+                 android:supportsRtl="true"
+    >
+
+    </application>
+
+</manifest>

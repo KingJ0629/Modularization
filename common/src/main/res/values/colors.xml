@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--通用基本色-->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="blue">#8EE5EE</color>
+    <color name="shallow_gray">#ededed</color>
+    <color name="grey_back">#ebebeb</color>
+    <color name="gray_bg">#aaaaaa</color>
+    <color name="shallow_gray_bg">#ebebeb</color>
+
+    <!--字体颜色-->
+    <color name="font_main">#333333</color>
+    <color name="font_hint">#aaaaaa</color>
+
+    <color name="divider_line">#D1D1D1</color>
+</resources>
