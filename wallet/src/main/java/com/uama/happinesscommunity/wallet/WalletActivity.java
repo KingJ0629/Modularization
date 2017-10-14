@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 import butterknife.ButterKnife;
 
@@ -15,12 +17,16 @@ import butterknife.ButterKnife;
 @Route(path = "/wallet/WalletActivity")
 public class WalletActivity extends Activity {
 	
+	@Autowired
+	String name;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.wallet_life_layout);
 		ButterKnife.bind(this);
+		ARouter.getInstance().inject(this);
 		
-		Log.i("msg", "WalletActivity class");
+		Log.i("msg", "WalletActivity class " + name);
 	}
 }

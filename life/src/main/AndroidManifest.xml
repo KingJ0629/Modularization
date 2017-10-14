@@ -12,6 +12,10 @@
             android:name="com.uama.happinesscommunity.life.LifeActivity"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name="com.uama.happinesscommunity.life.Life2Activity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>
