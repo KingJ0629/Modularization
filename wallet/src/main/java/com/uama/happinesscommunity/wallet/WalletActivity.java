@@ -7,6 +7,7 @@ import android.util.Log;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
 
 import butterknife.ButterKnife;
 
@@ -14,7 +15,7 @@ import butterknife.ButterKnife;
  * Created by Jin on 2017/10/12.
  * Description
  */
-@Route(path = "/wallet/WalletActivity")
+@Route(path = ARouterConstant.WALLET_INDEX)
 public class WalletActivity extends Activity {
 	
 	@Autowired

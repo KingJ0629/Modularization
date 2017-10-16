@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -15,7 +16,7 @@ import butterknife.OnClick;
 /**
  * Created by Jin
  */
-@Route(path = "/life/Life2Activity")
+@Route(path = ARouterConstant.LIFE_INDEX2)
 public class Life2Activity extends AppCompatActivity {
 	
 	@Autowired
@@ -34,6 +35,6 @@ public class Life2Activity extends AppCompatActivity {
 	@OnClick(R2.id.layout)
 	public void click() {
 		Log.i("msg", "LifeActivity");
-		ARouter.getInstance().build("/wallet/WalletActivity").navigation();
+		ARouter.getInstance().build(ARouterConstant.WALLET_INDEX).navigation();
 	}
 }
