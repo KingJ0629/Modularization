@@ -27,7 +27,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public class Injection {
 
-    public static WalletRepository provideTasksRepository(@NonNull Context context) {
+    public static WalletRepository provideWalletRepository(@NonNull Context context) {
         checkNotNull(context);
         return WalletRepository.getInstance(WalletRemoteDataSource.getInstance(),
                 WalletLocalDataSource.getInstance(context));

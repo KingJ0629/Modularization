@@ -21,7 +21,7 @@ public class WalletPresenter extends WalletContract.Presenter {
 	
 	@Override
 	protected void init() {
-		mWalletRepository = Injection.provideTasksRepository(mContext.getApplicationContext());
+		mWalletRepository = Injection.provideWalletRepository(mContext.getApplicationContext());
 	}
 	
 	@Override
