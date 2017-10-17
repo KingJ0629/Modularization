@@ -10,7 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.uama.happinesscommunity.CommonApplication;
+import com.uama.happinesscommunity.base.CommonApplication;
 import com.uama.happinesscommunity.bean.BaseEntity;
 
 import java.io.IOException;

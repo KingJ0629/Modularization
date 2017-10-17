@@ -1,11 +1,11 @@
-package com.uama.happinesscommunity;
+package com.uama.happinesscommunity.life;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.uama.happinesscommunity.life.R;
+import com.uama.happinesscommunity.base.BaseFragment;
 
 import butterknife.ButterKnife;
 

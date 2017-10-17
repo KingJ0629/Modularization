@@ -3,7 +3,7 @@ package com.uama.happinesscommunity.net;
 
 import android.content.Context;
 
-import com.uama.happinesscommunity.CommonApplication;
+import com.uama.happinesscommunity.base.CommonApplication;
 import com.uama.happinesscommunity.common.BuildConfig;
 
 import java.io.IOException;
