@@ -23,6 +23,7 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        // ARouter
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [ moduleName : project.getName() ]
@@ -30,6 +31,7 @@ android {
         }
 
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -37,13 +39,25 @@ android {
         }
     }
 
+    // 前缀
     resourcePrefix "wallet_"
+
+    sourceSets {
+        main {
+            if (!isBuildModule.toBoolean()) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/test/AndroidManifest.xml'
+            }
+        }
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs'
     })
     testCompile 'junit:junit:4.12'
     compile project(':common')
@@ -51,4 +65,6 @@ dependencies {
     compile globalConfiguration.android.arouter_annotationProcessor
 
     compile globalConfiguration.android.butterknife_annotationProcessor
+
+    compile globalConfiguration.android.dagger2_annotationProcessor
 }

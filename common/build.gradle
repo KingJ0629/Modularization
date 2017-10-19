@@ -23,6 +23,7 @@ android {
         }
 
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -53,4 +54,8 @@ dependencies {
     // ARouter
     compile globalConfiguration.android.arouter
     compile globalConfiguration.android.arouter_annotationProcessor
+
+    // Dagger2
+    compile globalConfiguration.android.dagger2
+    compile globalConfiguration.android.dagger2_annotationProcessor
 }

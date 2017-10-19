@@ -3,6 +3,9 @@ ext {
     androidCompileSdkVersion = 23
     androidBuildToolsVersion = "25.0.2"
 
+    androidMinSdkVersion = 18
+    androidTargetSdkVersion = 23
+
     supportLibraryVersion = '23.3.0'
     android = [
             appcompat_v7: "com.android.support:appcompat-v7:${supportLibraryVersion}",
@@ -14,29 +17,10 @@ ext {
             // Butter Knife
             butterknife: "com.jakewharton:butterknife:8.8.1",
             butterknife_annotationProcessor: "com.jakewharton:butterknife-compiler:8.8.1",
+
+            // Dagger2
+            dagger2: "com.google.dagger:dagger:2.5",
+            dagger2_annotationProcessor: "com.google.dagger:dagger-compiler:2.5",
     ]
-
-
-    androidMinSdkVersion = 18
-    androidTargetSdkVersion = 23
-
-    /*
-    version = '1.5'
-
-    android = [
-            recyclerView: "com.android.support:recyclerview-v7:${supportLibraryVersion}",
-            appcompat_v7: "com.android.support:appcompat-v7:${supportLibraryVersion}",
-            support_v4  : "com.android.support:support-v4:${supportLibraryVersion}",
-    ]
-
-    view = [
-            aaaaaa: "com.xxxxxx:aaaaaa:${version}",
-    ]
-
-    // 调用
-    // def android = rootProject.ext.android
-    // compile android.appcompat_v7
-
-    */
 
 }

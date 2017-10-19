@@ -12,6 +12,8 @@ import com.uama.happinesscommunity.wallet.model.WalletBean;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import butterknife.ButterKnife;
 
 /**
@@ -36,9 +38,12 @@ public class WalletActivity extends MVPBaseActivity<WalletContract.View, WalletP
 		mPresenter.request();
 	}
 	
+	@Inject
+	WalletPresenter mWalletPresenter;
+	
 	@Override
 	protected WalletPresenter createPresenter() {
-		return new WalletPresenter();
+		return mWalletPresenter;
 	}
 	
 	@Override

@@ -1,11 +1,14 @@
 package com.uama.happinesscommunity.wallet;
 
+import com.uama.happinesscommunity.common.utils.L;
 import com.uama.happinesscommunity.wallet.model.Injection;
 import com.uama.happinesscommunity.wallet.model.WalletBean;
 import com.uama.happinesscommunity.wallet.model.WalletDataSource;
 import com.uama.happinesscommunity.wallet.model.WalletRepository;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 /**
  * Created by Jin on 2017/10/17.
@@ -18,6 +21,11 @@ public class WalletPresenter extends WalletContract.Presenter {
 	 * 数据获取在P层实现即可
  	 */
 	WalletRepository mWalletRepository;
+	
+	@Inject
+	public WalletPresenter() {
+		L.i("sss" + "");
+	}
 	
 	@Override
 	protected void init() {
