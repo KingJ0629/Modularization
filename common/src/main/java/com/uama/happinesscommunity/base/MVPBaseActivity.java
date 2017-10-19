@@ -17,6 +17,8 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends Bas
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		initInject();
+		
 		// 创建Presenter
 		mPresenter = createPresenter();
 		
@@ -24,6 +26,7 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends Bas
 		mPresenter.attachView(this, (V) this);
 	}
 	
+	protected abstract void initInject();
 	protected abstract T createPresenter();
 	
 	@Override

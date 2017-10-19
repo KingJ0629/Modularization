@@ -53,9 +53,9 @@ dependencies {
 
     // ARouter
     compile globalConfiguration.android.arouter
-    compile globalConfiguration.android.arouter_annotationProcessor
+    annotationProcessor globalConfiguration.android.arouter_annotationProcessor
 
     // Dagger2
     compile globalConfiguration.android.dagger2
-    compile globalConfiguration.android.dagger2_annotationProcessor
+    annotationProcessor globalConfiguration.android.dagger2_annotationProcessor
 }
