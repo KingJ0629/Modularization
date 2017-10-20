@@ -23,8 +23,8 @@ public class WalletPresenter extends WalletContract.Presenter {
 	WalletRepository mWalletRepository;
 	
 	@Inject
-	public WalletPresenter() {
-		L.i("sss" + "");
+	public WalletPresenter(String data) {
+		L.i(data);
 	}
 	
 	@Override

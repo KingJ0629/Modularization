@@ -9,6 +9,7 @@ import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
 import com.uama.happinesscommunity.base.MVPBaseActivity;
 import com.uama.happinesscommunity.common.utils.L;
 import com.uama.happinesscommunity.wallet.di.component.DaggerWalletComponent;
+import com.uama.happinesscommunity.wallet.di.module.WalletModule;
 import com.uama.happinesscommunity.wallet.model.WalletBean;
 
 import java.util.List;
@@ -41,7 +42,7 @@ public class WalletActivity extends MVPBaseActivity<WalletContract.View, WalletP
 	
 	@Override
 	protected void initInject() {
-		DaggerWalletComponent.builder().build().inject(this);
+		DaggerWalletComponent.builder().walletModule(new WalletModule()).build().inject(this);
 	}
 	
 	@Inject
