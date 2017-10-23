@@ -15,6 +15,9 @@ public abstract class WalletMVPBaseActivity<V, T extends BasePresenter<V>> exten
 	protected WalletComponent getWalletComponent() {
 		WalletModule mWalletModule = new WalletModule();
 		mWalletModule.setData("data come from");
-		return DaggerWalletComponent.builder().walletModule(mWalletModule).build();
+		return DaggerWalletComponent.builder()
+				.appComponent(getAppComponent())
+				.walletModule(mWalletModule)
+				.build();
 	}
 }
