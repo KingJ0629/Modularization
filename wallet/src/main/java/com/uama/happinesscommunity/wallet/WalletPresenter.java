@@ -24,8 +24,7 @@ public class WalletPresenter extends WalletContract.Presenter {
 	
 	@Inject
 	public WalletPresenter(String data) {
-		L.i(data);
-	}
+		L.i(data);}
 	
 	@Override
 	protected void init() {

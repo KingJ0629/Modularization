@@ -3,7 +3,6 @@ package com.uama.happinesscommunity.base;
 import android.content.Context;
 import android.support.annotation.Nullable;
 
-import com.google.common.base.Preconditions;
 import com.uama.happinesscommunity.bean.BaseEntity;
 import com.uama.happinesscommunity.common.utils.L;
 import com.uama.happinesscommunity.net.ProtocolManagers;
@@ -13,6 +12,7 @@ import com.uama.happinesscommunity.net.RetrofitHelper;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 
+import dagger.internal.Preconditions;
 import retrofit2.Call;
 
 /**
@@ -80,7 +80,7 @@ public abstract class BasePresenter<T> {
 	}
 	/***  ------------封装网络请求  end ----------- ***/
 	
-	protected <T> T checkNotNull(T t, @Nullable Object errorMessage) {
+	protected <T> T checkNotNull(T t, @Nullable String errorMessage) {
 		try {
 			Preconditions.checkNotNull(t, errorMessage);
 		} catch (NullPointerException e) {

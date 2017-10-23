@@ -4,6 +4,8 @@ package com.uama.happinesscommunity.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import javax.inject.Inject;
+
 /**
  * Created by Jin on 2017/6/7.
  * Description MVP模式 V 和P建立关联的基类
@@ -11,23 +13,21 @@ import android.support.annotation.Nullable;
 public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends BaseActivity {
 	
 	// Presenter对象
-	protected T mPresenter;
+	@Inject
+	public T mPresenter;
 	
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		// 注入Presenter
 		initInject();
-		
-		// 创建Presenter
-		mPresenter = createPresenter();
 		
 		// View与Presenter 建立关联
 		mPresenter.attachView(this, (V) this);
 	}
 	
 	protected abstract void initInject();
-	protected abstract T createPresenter();
 	
 	@Override
 	public void onDestroy() {

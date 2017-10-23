@@ -19,7 +19,7 @@ package com.uama.happinesscommunity.wallet.model;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static dagger.internal.Preconditions.checkNotNull;
 
 /**
  * Created by Jin on 2017/10/17.

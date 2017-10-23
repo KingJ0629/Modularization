@@ -10,8 +10,8 @@ import dagger.Provides;
 @Module
 public class WalletModule {
 
-//	String data;
-//
+	String data = "";
+
 //	public WalletModule(String data) {
 //		this.data = data;
 //	}
@@ -23,6 +23,10 @@ public class WalletModule {
 	
 	@Provides
 	public String providerString(){
-		return "param from other function";
+		return data;
+	}
+	
+	public void setData(String data) {
+		this.data = data;
 	}
 }

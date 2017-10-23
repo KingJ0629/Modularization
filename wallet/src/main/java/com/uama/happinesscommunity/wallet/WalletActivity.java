@@ -6,15 +6,10 @@ import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
-import com.uama.happinesscommunity.base.MVPBaseActivity;
 import com.uama.happinesscommunity.common.utils.L;
-import com.uama.happinesscommunity.wallet.di.component.DaggerWalletComponent;
-import com.uama.happinesscommunity.wallet.di.module.WalletModule;
 import com.uama.happinesscommunity.wallet.model.WalletBean;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 
@@ -23,7 +18,7 @@ import butterknife.ButterKnife;
  * Description 钱包模块View层
  */
 @Route(path = ARouterConstant.WALLET_INDEX)
-public class WalletActivity extends MVPBaseActivity<WalletContract.View, WalletPresenter> implements WalletContract.View {
+public class WalletActivity extends WalletMVPBaseActivity<WalletContract.View, WalletPresenter> implements WalletContract.View {
 	
 	@Autowired
 	String name;
@@ -42,15 +37,7 @@ public class WalletActivity extends MVPBaseActivity<WalletContract.View, WalletP
 	
 	@Override
 	protected void initInject() {
-		DaggerWalletComponent.builder().walletModule(new WalletModule()).build().inject(this);
-	}
-	
-	@Inject
-	WalletPresenter mWalletPresenter;
-	
-	@Override
-	protected WalletPresenter createPresenter() {
-		return mWalletPresenter;
+		getWalletComponent().inject(this);
 	}
 	
 	@Override

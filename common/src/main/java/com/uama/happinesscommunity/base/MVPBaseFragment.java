@@ -3,7 +3,7 @@ package com.uama.happinesscommunity.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static dagger.internal.Preconditions.checkNotNull;
 
 /**
  * Created by Jin on 2017/6/7.
