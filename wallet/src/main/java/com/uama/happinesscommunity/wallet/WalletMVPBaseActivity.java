@@ -12,6 +12,9 @@ import com.uama.happinesscommunity.wallet.di.module.WalletModule;
  */
 public abstract class WalletMVPBaseActivity<V, T extends BasePresenter<V>> extends MVPBaseActivity<V, T> {
 	
+	/**
+	 * 实现元素注入
+	 */
 	protected WalletComponent getWalletComponent() {
 		WalletModule mWalletModule = new WalletModule();
 		mWalletModule.setData("data come from");

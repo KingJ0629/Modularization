@@ -38,6 +38,9 @@ public class CommonApplication extends Application {
 		return instance;
 	}
 	
+	/**
+	 * 实现单例注入元素
+	 */
 	public static AppComponent getAppComponent() {
 		if (mAppComponent == null) {
 			mAppComponent = DaggerAppComponent.builder()
