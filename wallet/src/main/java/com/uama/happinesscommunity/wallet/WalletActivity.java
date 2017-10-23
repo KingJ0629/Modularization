@@ -6,13 +6,10 @@ import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
-import com.uama.happinesscommunity.base.CommonApplication;
 import com.uama.happinesscommunity.common.utils.L;
 import com.uama.happinesscommunity.wallet.model.WalletBean;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 
@@ -38,18 +35,9 @@ public class WalletActivity extends WalletMVPBaseActivity<WalletContract.View, W
 		mPresenter.request();
 	}
 	
-	@Inject
-	CommonApplication mCommonApplication;
-	
 	@Override
 	protected void initInject() {
 		getWalletComponent().inject(this);
-		
-		if (null != mCommonApplication) {
-			L.i("mCommonApplication");
-		} else {
-			L.i("mCommonApplication null");
-		}
 	}
 	
 	@Override

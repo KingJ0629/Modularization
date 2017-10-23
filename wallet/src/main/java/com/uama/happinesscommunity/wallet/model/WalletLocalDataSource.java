@@ -13,17 +13,8 @@ import static dagger.internal.Preconditions.checkNotNull;
  */
 public class WalletLocalDataSource implements WalletDataSource {
 	
-	private static WalletLocalDataSource INSTANCE;
-	
-	private WalletLocalDataSource(@NonNull Context context) {
+	public WalletLocalDataSource(@NonNull Context context) {
 		checkNotNull(context);
-	}
-	
-	public static WalletLocalDataSource getInstance(@NonNull Context context) {
-		if (INSTANCE == null) {
-			INSTANCE = new WalletLocalDataSource(context);
-		}
-		return INSTANCE;
 	}
 	
 	@Override

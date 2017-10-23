@@ -1,7 +1,5 @@
 package com.uama.happinesscommunity.wallet;
 
-import com.uama.happinesscommunity.common.utils.L;
-import com.uama.happinesscommunity.wallet.model.Injection;
 import com.uama.happinesscommunity.wallet.model.WalletBean;
 import com.uama.happinesscommunity.wallet.model.WalletDataSource;
 import com.uama.happinesscommunity.wallet.model.WalletRepository;
@@ -23,12 +21,8 @@ public class WalletPresenter extends WalletContract.Presenter {
 	WalletRepository mWalletRepository;
 	
 	@Inject
-	public WalletPresenter(String data) {
-		L.i(data);}
-	
-	@Override
-	protected void init() {
-		mWalletRepository = Injection.provideWalletRepository(mContext.getApplicationContext());
+	public WalletPresenter(WalletRepository mWalletRepository) {
+		this.mWalletRepository = mWalletRepository;
 	}
 	
 	@Override
@@ -41,10 +35,10 @@ public class WalletPresenter extends WalletContract.Presenter {
 				// 回调V层
 				getView().loadView(list);
 			}
-			
+
 			@Override
 			public void onWalletListNotAvailable() {
-				
+
 			}
 		});
 	}

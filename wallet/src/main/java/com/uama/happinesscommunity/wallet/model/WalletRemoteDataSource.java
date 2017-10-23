@@ -10,18 +10,6 @@ import java.util.ArrayList;
  */
 public class WalletRemoteDataSource implements WalletDataSource {
 	
-	private static WalletRemoteDataSource INSTANCE;
-	
-	public static WalletRemoteDataSource getInstance() {
-		if (INSTANCE == null) {
-			INSTANCE = new WalletRemoteDataSource();
-		}
-		return INSTANCE;
-	}
-	
-	// Prevent direct instantiation.
-	private WalletRemoteDataSource() {}
-	
 	@Override
 	public void getWalletList(@NonNull LoadWalletListCallback callback) {
 		// 请求远程数据

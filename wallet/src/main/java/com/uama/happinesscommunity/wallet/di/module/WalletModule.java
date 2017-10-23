@@ -1,5 +1,13 @@
 package com.uama.happinesscommunity.wallet.di.module;
 
+import android.content.Context;
+
+import com.uama.happinesscommunity.wallet.model.WalletDataSource;
+import com.uama.happinesscommunity.wallet.model.WalletLocalDataSource;
+import com.uama.happinesscommunity.wallet.model.WalletRemoteDataSource;
+
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -10,23 +18,26 @@ import dagger.Provides;
 @Module
 public class WalletModule {
 
-	String data = "";
+	Context mContext;
+	
+	public WalletModule(Context mContext) {
+		this.mContext = mContext;
+	}
 
-//	public WalletModule(String data) {
-//		this.data = data;
-//	}
-//
-//	@Provides
-//	WalletPresenter provideWalletPresenter() {
-//		return new WalletPresenter(data);
-//	}
+	@Named("local")
+	@Provides
+	WalletDataSource provideWalletLocalDataSource() {
+		return new WalletLocalDataSource(mContext);
+	}
+	
+	@Named("remote")
+	@Provides
+	WalletDataSource provideWalletRemoteDataSource() {
+		return new WalletRemoteDataSource();
+	}
 	
 	@Provides
 	public String providerString(){
-		return data;
-	}
-	
-	public void setData(String data) {
-		this.data = data;
+		return "data come from module";
 	}
 }

@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import static dagger.internal.Preconditions.checkNotNull;
 
 /**
@@ -13,8 +16,6 @@ import static dagger.internal.Preconditions.checkNotNull;
  * Description 钱包Model层
  */
 public class WalletRepository implements WalletDataSource {
-	
-	private static WalletRepository INSTANCE = null;
 	
 	private final WalletDataSource mTasksRemoteDataSource;
 	
@@ -30,33 +31,11 @@ public class WalletRepository implements WalletDataSource {
 	 */
 	boolean hasLocalData = true;
 	
-	private WalletRepository(@NonNull WalletDataSource tasksRemoteDataSource,
-	                         @NonNull WalletDataSource tasksLocalDataSource) {
+	@Inject
+	public WalletRepository(@Named("remote") WalletDataSource tasksRemoteDataSource,
+	                        @Named("local") WalletDataSource tasksLocalDataSource) {
 		mTasksRemoteDataSource = checkNotNull(tasksRemoteDataSource);
 		mTasksLocalDataSource = checkNotNull(tasksLocalDataSource);
-	}
-	
-	/**
-	 * Returns the single instance of this class, creating it if necessary.
-	 *
-	 * @param tasksRemoteDataSource the backend data source
-	 * @param tasksLocalDataSource  the device storage data source
-	 * @return the {@link WalletDataSource} instance
-	 */
-	public static WalletRepository getInstance(WalletDataSource tasksRemoteDataSource,
-	                                           WalletDataSource tasksLocalDataSource) {
-		if (INSTANCE == null) {
-			INSTANCE = new WalletRepository(tasksRemoteDataSource, tasksLocalDataSource);
-		}
-		return INSTANCE;
-	}
-	
-	/**
-	 * Used to force {@link #getInstance(WalletDataSource, WalletDataSource)} to create a new instance
-	 * next time it's called.
-	 */
-	public static void destroyInstance() {
-		INSTANCE = null;
 	}
 	
 	@Override

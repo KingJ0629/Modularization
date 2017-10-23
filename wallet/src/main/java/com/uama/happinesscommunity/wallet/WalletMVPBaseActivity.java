@@ -16,11 +16,9 @@ public abstract class WalletMVPBaseActivity<V, T extends BasePresenter<V>> exten
 	 * 实现元素注入
 	 */
 	protected WalletComponent getWalletComponent() {
-		WalletModule mWalletModule = new WalletModule();
-		mWalletModule.setData("data come from");
 		return DaggerWalletComponent.builder()
 				.appComponent(getAppComponent())
-				.walletModule(mWalletModule)
+				.walletModule(new WalletModule(getApplicationContext()))
 				.build();
 	}
 }
