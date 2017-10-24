@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
+import com.uama.happinesscommunity.view.UamaImageView;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -14,6 +16,9 @@ import butterknife.OnClick;
  */
 public class LifeActivity extends AppCompatActivity {
 
+	@BindView(R2.id.tv2)
+	UamaImageView mView;
+	
 	private final static String TAG = "LifeActivity.class";
 	
 	@Override
@@ -22,6 +27,8 @@ public class LifeActivity extends AppCompatActivity {
 		setContentView(R.layout.life_layout);
 		ButterKnife.bind(this);
 		
+		String url = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=280326699,1207777040&fm=27&gp=0.jpg";
+		mView.setImage(url);
 	}
 	
 	@OnClick(R2.id.tv1)

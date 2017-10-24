@@ -58,4 +58,7 @@ dependencies {
     // Dagger2
     compile globalConfiguration.android.dagger2
     annotationProcessor globalConfiguration.android.dagger2_annotationProcessor
+
+    // Fresco
+    compile 'com.facebook.fresco:fresco:0.12.0'
 }
