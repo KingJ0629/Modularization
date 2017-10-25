@@ -2,6 +2,8 @@ package com.uama.happinesscommunity.wallet.model;
 
 import android.support.annotation.NonNull;
 
+import com.uama.happinesscommunity.wallet.di.scope.WalletActivityScope;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +17,7 @@ import static dagger.internal.Preconditions.checkNotNull;
  * Created by Jin on 2017/10/17.
  * Description 钱包Model层
  */
+@WalletActivityScope
 public class WalletRepository implements WalletDataSource {
 	
 	private final WalletDataSource mTasksRemoteDataSource;

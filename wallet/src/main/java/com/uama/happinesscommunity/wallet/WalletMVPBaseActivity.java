@@ -12,13 +12,18 @@ import com.uama.happinesscommunity.wallet.di.module.WalletModule;
  */
 public abstract class WalletMVPBaseActivity<V, T extends BasePresenter<V>> extends MVPBaseActivity<V, T> {
 	
+	WalletComponent mWalletComponent;
+	
 	/**
 	 * 实现元素注入
+	 * 作用域 {@link com.uama.happinesscommunity.wallet.di.scope.WalletActivityScope}
 	 */
 	protected WalletComponent getWalletComponent() {
-		return DaggerWalletComponent.builder()
-				.appComponent(getAppComponent())
-				.walletModule(new WalletModule(getApplicationContext()))
-				.build();
+		if (mWalletComponent == null)
+			mWalletComponent = DaggerWalletComponent.builder()
+					.appComponent(getAppComponent())
+					.walletModule(new WalletModule(getApplicationContext()))
+					.build();
+		return mWalletComponent;
 	}
 }

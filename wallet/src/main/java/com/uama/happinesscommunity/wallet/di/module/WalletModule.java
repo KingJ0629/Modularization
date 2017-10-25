@@ -2,6 +2,7 @@ package com.uama.happinesscommunity.wallet.di.module;
 
 import android.content.Context;
 
+import com.uama.happinesscommunity.wallet.di.scope.WalletActivityScope;
 import com.uama.happinesscommunity.wallet.model.WalletDataSource;
 import com.uama.happinesscommunity.wallet.model.WalletLocalDataSource;
 import com.uama.happinesscommunity.wallet.model.WalletRemoteDataSource;
@@ -25,12 +26,14 @@ public class WalletModule {
 	}
 
 	@Named("local")
+	@WalletActivityScope
 	@Provides
 	WalletDataSource provideWalletLocalDataSource() {
 		return new WalletLocalDataSource(mContext);
 	}
 	
 	@Named("remote")
+	@WalletActivityScope
 	@Provides
 	WalletDataSource provideWalletRemoteDataSource() {
 		return new WalletRemoteDataSource();
