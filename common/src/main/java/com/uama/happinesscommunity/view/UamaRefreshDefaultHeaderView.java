@@ -2,7 +2,6 @@ package com.uama.happinesscommunity.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -35,8 +34,6 @@ public class UamaRefreshDefaultHeaderView extends RelativeLayout implements Uama
 
     @Override
     public void onProgressUpdate(UamaRefreshLayout layout, UamaRefreshLayout.Progress progress, int status) {
-
-        Log.i("msg", (progress.getCurrentY() * 100) / (progress.getRefreshY()) + "   ___");
 
         switch (status) {
             case UamaRefreshLayout.STATUS_INIT:
