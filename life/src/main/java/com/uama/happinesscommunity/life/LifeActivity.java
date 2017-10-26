@@ -3,6 +3,7 @@ package com.uama.happinesscommunity.life;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
 import com.uama.happinesscommunity.view.UamaImageView;
@@ -14,6 +15,7 @@ import butterknife.OnClick;
 /**
  * Created by Jin
  */
+@Route(path = ARouterConstant.LIFE_INDEX)
 public class LifeActivity extends AppCompatActivity {
 
 	@BindView(R2.id.tv2)

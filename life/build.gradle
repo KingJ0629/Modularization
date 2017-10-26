@@ -60,4 +60,6 @@ dependencies {
     annotationProcessor globalConfiguration.android.arouter_annotationProcessor
 
     annotationProcessor globalConfiguration.android.butterknife_annotationProcessor
+
+    annotationProcessor globalConfiguration.android.dagger2_annotationProcessor
 }

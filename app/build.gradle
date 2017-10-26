@@ -47,4 +47,6 @@ dependencies {
     compile project(':wallet')
 
     annotationProcessor globalConfiguration.android.butterknife_annotationProcessor
+
+    annotationProcessor globalConfiguration.android.arouter_annotationProcessor
 }
