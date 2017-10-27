@@ -14,8 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#ff0000"
-            android:text="UamaRefreshLayout"/>
+            android:gravity="center"
+            android:text="下拉刷新封装 UamaRefreshLayout"/>
 
     </com.uama.happinesscommunity.view.UamaRefreshView>
-
 </RelativeLayout>
