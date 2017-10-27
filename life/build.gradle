@@ -42,6 +42,11 @@ android {
         main {
             if (!isBuildModule.toBoolean()) {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
+
+                // 作为module被依赖的时候排除掉debug文件夹下的内容
+                java {
+                    exclude 'debug/**'
+                }
             } else {
                 manifest.srcFile 'src/test/AndroidManifest.xml'
             }
