@@ -23,6 +23,6 @@ public interface WalletContract {
 		/**
 		 * request
 		 */
-		protected  abstract void request();
+		protected abstract void request();
 	}
 }

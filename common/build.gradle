@@ -1,16 +1,14 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
 
-def globalConfiguration = rootProject.extensions.getByName("ext")
-
 android {
 
-    compileSdkVersion globalConfiguration.androidCompileSdkVersion
-    buildToolsVersion globalConfiguration.androidBuildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion globalConfiguration.androidMinSdkVersion
-        targetSdkVersion globalConfiguration.androidTargetSdkVersion
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -34,31 +32,29 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile globalConfiguration.android.appcompat_v7
-
-    // butter knife
-    compile globalConfiguration.android.butterknife
-    annotationProcessor globalConfiguration.android.butterknife_annotationProcessor
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
 
     // http
-    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    compile "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
+
+    // butter knife
+    compile "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
 
     // recycler view
-    compile ('com.android.support:recyclerview-v7:23.3.0') {
-        exclude group: 'com.android.support'
-    }
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
 
     // ARouter
-    compile globalConfiguration.android.arouter
-    annotationProcessor globalConfiguration.android.arouter_annotationProcessor
+    compile "com.alibaba:arouter-api:$rootProject.arouterVersion"
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterAnnotationVersion"
 
     // Dagger2
-    compile globalConfiguration.android.dagger2
-    annotationProcessor globalConfiguration.android.dagger2_annotationProcessor
+    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
 
     // Fresco
-    compile 'com.facebook.fresco:fresco:0.12.0'
+    compile "com.facebook.fresco:fresco:$rootProject.frescoVersion"
 }

@@ -3,7 +3,7 @@ package com.uama.happinesscommunity.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import static dagger.internal.Preconditions.checkNotNull;
+import javax.inject.Inject;
 
 /**
  * Created by Jin on 2017/6/7.
@@ -12,20 +12,21 @@ import static dagger.internal.Preconditions.checkNotNull;
 public abstract class MVPBaseFragment<V, T extends BasePresenter<V>> extends BaseFragment {
 	
 	// Presenter对象
+	@Inject
 	protected T mPresenter;
 	
 	@Override
 	public void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		// 创建Presenter
-		mPresenter = checkNotNull(createPresenter());
+		// 注入Presenter
+		initInject();
 		
 		// View与Presenter 建立关联
 		mPresenter.attachView(mContext, (V) mContext);
 	}
 	
-	protected abstract T createPresenter();
+	protected abstract void initInject();
 	
 	@Override
 	public void onDestroy() {

@@ -1,26 +1,23 @@
 ext {
 
-    androidCompileSdkVersion = 23
-    androidBuildToolsVersion = "25.0.2"
+    // Sdk and tools
+    minSdkVersion = 18
+    targetSdkVersion = 23
+    compileSdkVersion = 26
+    buildToolsVersion = '26.0.1'
 
-    androidMinSdkVersion = 18
-    androidTargetSdkVersion = 23
+    // App dependencies
+    supportLibraryVersion = '26.0.0'
+    daggerVersion = '2.12'
+    arouterVersion = '1.2.2'
+    arouterAnnotationVersion = '1.1.3'
+    butterknifeVersion = '8.8.1'
+    frescoVersion = '0.12.0'
+    retrofitVersion = '2.3.0'
+    okhttpVersion = '3.4.1'
 
-    supportLibraryVersion = '23.3.0'
-    android = [
-            appcompat_v7: "com.android.support:appcompat-v7:${supportLibraryVersion}",
-
-            // ARouter
-            arouter: "com.alibaba:arouter-api:1.2.2",
-            arouter_annotationProcessor: "com.alibaba:arouter-compiler:1.1.3",
-
-            // Butter Knife
-            butterknife: "com.jakewharton:butterknife:8.8.1",
-            butterknife_annotationProcessor: "com.jakewharton:butterknife-compiler:8.8.1",
-
-            // Dagger2
-            dagger2: "com.google.dagger:dagger:2.12",
-            dagger2_annotationProcessor: "com.google.dagger:dagger-compiler:2.12",
-    ]
+    // other
+    espressoVersion = '2.2.2'
+    junitVersion = '4.12'
 
 }
