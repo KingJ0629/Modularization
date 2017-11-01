@@ -10,4 +10,5 @@ public interface LifeARouterConstant {
 	
 	String LIFE_INDEX = LIFE_GROUP + "LifeActivity";
 	String LIFE_INDEX2 = LIFE_GROUP + "Life2Activity";
+	String LIFE_SAMPLE = LIFE_GROUP + "SampleActivity";
 }

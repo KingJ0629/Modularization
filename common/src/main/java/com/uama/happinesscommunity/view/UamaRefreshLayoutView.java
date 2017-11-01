@@ -1,30 +1,33 @@
 package com.uama.happinesscommunity.view;
 
 import android.content.Context;
-import android.support.v4.widget.SwipeRefreshLayout;
+import android.graphics.Color;
 import android.util.AttributeSet;
 
 /**
  * Created by Jin on 2017/10/25.
- * Description 下拉刷新控件--google原生样式
+ * Description 下拉刷新控件
  */
-public class UamaRefreshSwipeView extends SwipeRefreshLayout {
+public class UamaRefreshLayoutView extends UamaRefreshLayout {
 	
-	public UamaRefreshSwipeView(Context context) {
+	public UamaRefreshLayoutView(Context context) {
 		super(context);
 		init();
 	}
 	
-	public UamaRefreshSwipeView(Context context, AttributeSet attrs) {
+	public UamaRefreshLayoutView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		init();
 	}
 	
 	/**
 	 * 默认刷新样式初始化
+	 * 具体设置项根据第三方可配置项配置
 	 */
 	private void init() {
-		
+		super.setBackgroundColor(Color.GREEN);
+		super.setAutoRefreshDuration(400);
+		super.setRatioOfHeaderHeightToReach(1.5f);
 	}
 	
 	public interface OnRefreshListener {
@@ -36,7 +39,8 @@ public class UamaRefreshSwipeView extends SwipeRefreshLayout {
 	 * @param onRefreshListener {@link OnRefreshListener}
 	 */
 	public void addOnRefreshListener(final OnRefreshListener onRefreshListener) {
-		super.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+		super.addOnVRefreshListener(new UamaRefreshLayout.OnVRefreshListener() {
+			
 			@Override
 			public void onRefresh() {
 				onRefreshListener.onRefresh();
@@ -48,13 +52,13 @@ public class UamaRefreshSwipeView extends SwipeRefreshLayout {
 	 * 自动刷新
 	 */
 	public void autoRefresh() {
-		super.setRefreshing(true);
+		super.autoRefresh();
 	}
 	
 	/**
 	 * 完成刷新
 	 */
 	public void refreshComplete() {
-		super.setRefreshing(false);
+		super.refreshComplete();
 	}
 }

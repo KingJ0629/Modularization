@@ -63,4 +63,5 @@ dependencies {
     annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterAnnotationVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
 }

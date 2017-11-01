@@ -11,7 +11,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
 import com.uama.happinesscommunity.common.utils.L;
-import com.uama.happinesscommunity.view.UamaRefreshView;
+import com.uama.happinesscommunity.view.UamaRefreshLayoutView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,7 +24,7 @@ import butterknife.OnClick;
 public class Life2Activity extends AppCompatActivity {
 	
 	@BindView(R2.id.refresh_layout)
-	UamaRefreshView mView;
+	UamaRefreshLayoutView mView;
 	
 	@Autowired
 	LifeBean bean;
@@ -38,7 +38,7 @@ public class Life2Activity extends AppCompatActivity {
 		
 		Toast.makeText(this, bean.getHa(), Toast.LENGTH_SHORT).show();
 		
-		mView.addOnRefreshListener(new UamaRefreshView.OnRefreshListener() {
+		mView.addOnRefreshListener(new UamaRefreshLayoutView.OnRefreshListener() {
 			@Override
 			public void onRefresh() {
 				mView.postDelayed(new Runnable() {
