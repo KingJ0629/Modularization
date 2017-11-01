@@ -1,10 +1,10 @@
 package com.uama.happinesscommunity.modularization;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
+import com.uama.happinesscommunity.TestActivity;
 import com.uama.happinesscommunity.common.utils.L;
 
 import butterknife.ButterKnife;
@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
 	@OnClick(R.id.layout)
 	public void click() {
 		L.i("msg", "MainActivity start");
-		ARouter.getInstance().build(ARouterConstant.LIFE_INDEX).navigation();
+//		ARouter.getInstance().build(ARouterConstant.LIFE_INDEX).navigation();
+		
+		Intent t = new Intent(this, TestActivity.class);
+		startActivity(t);
+		
 	}
 }
