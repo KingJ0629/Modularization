@@ -4,22 +4,18 @@ import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.uama.happinesscommunity.common.BuildConfig;
-import com.uama.happinesscommunity.di.AppComponent;
-import com.uama.happinesscommunity.di.DaggerAppComponent;
 import com.uama.happinesscommunity.view.UamaImageViewConfig;
 
-import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 
 /**
  * Created by Jin on 2017/10/12.
  * Description
  */
-public class CommonApplication extends DaggerApplication {
+public abstract class CommonApplication extends DaggerApplication {
 	
 	public static Context context;
 	
-	private static AppComponent mAppComponent;
 	private static CommonApplication instance;
 	
 	@Override
@@ -39,23 +35,7 @@ public class CommonApplication extends DaggerApplication {
 		UamaImageViewConfig.initialize(getApplicationContext());
 	}
 	
-	@Override
-	protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
-		getAppComponent().inject(this);
-		return mAppComponent;
-	}
-	
 	public static synchronized CommonApplication getInstance() {
 		return instance;
-	}
-	
-	/**
-	 * 实现单例注入元素
-	 */
-	public static AppComponent getAppComponent() {
-		if (mAppComponent == null) {
-			mAppComponent = DaggerAppComponent.builder().application(instance).build();
-		}
-		return mAppComponent;
 	}
 }

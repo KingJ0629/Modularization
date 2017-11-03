@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
-import com.uama.happinesscommunity.di.AppComponent;
-
 public class BaseFragment extends Fragment {
 
     public Context mContext;
@@ -23,7 +21,7 @@ public class BaseFragment extends Fragment {
         return mContext;
     }
     
-    protected AppComponent getAppComponent() {
-        return CommonApplication.getAppComponent();
-    }
+//    protected AppComponent getAppComponent() {
+//        return CommonApplication.getAppComponent();
+//    }
 }

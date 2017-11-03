@@ -1,7 +1,5 @@
 package com.uama.happinesscommunity;
 
-import javax.inject.Inject;
-
 /**
  * Created by Jin on 2017/11/1.
  * Description
@@ -18,8 +16,7 @@ public class Test {
 		this.name = name;
 	}
 	
-	@Inject
-	public Test() {
-		this.name = "test name";
+	public Test(String name) {
+		this.name = name;
 	}
 }

@@ -1,4 +1,4 @@
-package com.uama.happinesscommunity.di;
+package com.uama.happinesscommunity.modularization;
 
 import android.app.Application;
 import android.content.Context;

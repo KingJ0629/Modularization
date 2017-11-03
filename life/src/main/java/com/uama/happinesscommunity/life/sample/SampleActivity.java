@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
 import com.uama.happinesscommunity.base.MVPBaseActivity;
-import com.uama.happinesscommunity.life.DaggerLifeComponent;
 
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class SampleActivity extends MVPBaseActivity<SampleContract.View, SampleP
 	
 	@Override
 	protected void initInject() {
-		DaggerLifeComponent.create().inject(this);
+//		DaggerLifeComponent.create().inject(this);
 	}
 	
 	@Override

@@ -1,6 +1,6 @@
-package com.uama.happinesscommunity.di;
+package com.uama.happinesscommunity.life.dagger_android;
 
-import com.uama.happinesscommunity.TestActivity;
+import com.uama.happinesscommunity.di.scope.ActivityScope;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -13,8 +13,9 @@ import dagger.android.ContributesAndroidInjector;
  * When Dagger.Android annotation processor runs it will create 4 subcomponents for us.
  */
 @Module
-public abstract class ActivityBindingModule {
+public abstract class ActivityTempBindingModule {
 	
+    @ActivityScope
     @ContributesAndroidInjector
-    abstract TestActivity TestActivityInjector();
+    abstract TempActivity TempActivityInjector();
 }

@@ -18,6 +18,10 @@
             android:name="com.uama.happinesscommunity.life.sample.SampleActivity"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name="com.uama.happinesscommunity.life.dagger_android.TempActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

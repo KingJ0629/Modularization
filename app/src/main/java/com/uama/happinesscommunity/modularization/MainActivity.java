@@ -2,15 +2,21 @@ package com.uama.happinesscommunity.modularization;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-import com.uama.happinesscommunity.TestActivity;
+import com.uama.happinesscommunity.Test;
 import com.uama.happinesscommunity.common.utils.L;
+import com.uama.happinesscommunity.life.dagger_android.TempActivity;
+
+import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import dagger.android.support.DaggerAppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends DaggerAppCompatActivity {
+	
+	@Inject
+	Test tt;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +29,11 @@ public class MainActivity extends AppCompatActivity {
 	@OnClick(R.id.layout)
 	public void click() {
 		L.i("msg", "MainActivity start");
-//		ARouter.getInstance().build(ARouterConstant.LIFE_INDEX).navigation();
+//		ARouter.getInstance().build(ARouterConstant.LIFE_SAMPLE).navigation();
 		
-		Intent t = new Intent(this, TestActivity.class);
-		startActivity(t);
+		L.i("MainActivity   tt : " + tt.getName());
 		
+		Intent i = new Intent(this, TempActivity.class);
+		startActivity(i);
 	}
 }
