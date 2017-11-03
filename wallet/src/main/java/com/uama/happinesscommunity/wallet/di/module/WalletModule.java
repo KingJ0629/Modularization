@@ -19,16 +19,10 @@ import dagger.Provides;
 @Module
 public class WalletModule {
 
-	Context mContext;
-	
-	public WalletModule(Context mContext) {
-		this.mContext = mContext;
-	}
-
 	@Named("local")
 	@WalletActivityScope
 	@Provides
-	WalletDataSource provideWalletLocalDataSource() {
+	WalletDataSource provideWalletLocalDataSource(Context mContext) {
 		return new WalletLocalDataSource(mContext);
 	}
 	

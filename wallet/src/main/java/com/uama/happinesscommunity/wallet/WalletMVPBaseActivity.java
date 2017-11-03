@@ -22,7 +22,8 @@ public abstract class WalletMVPBaseActivity<V, T extends BasePresenter<V>> exten
 		if (mWalletComponent == null)
 			mWalletComponent = DaggerWalletComponent.builder()
 					.appComponent(getAppComponent())
-					.walletModule(new WalletModule(getApplicationContext()))
+					.walletModule(new WalletModule())
+					.provideContext(this)
 					.build();
 		return mWalletComponent;
 	}

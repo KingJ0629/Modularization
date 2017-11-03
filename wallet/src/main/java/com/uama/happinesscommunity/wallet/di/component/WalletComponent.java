@@ -1,10 +1,13 @@
 package com.uama.happinesscommunity.wallet.di.component;
 
+import android.content.Context;
+
 import com.uama.happinesscommunity.di.AppComponent;
 import com.uama.happinesscommunity.wallet.WalletActivity;
 import com.uama.happinesscommunity.wallet.di.module.WalletModule;
 import com.uama.happinesscommunity.wallet.di.scope.WalletActivityScope;
 
+import dagger.BindsInstance;
 import dagger.Component;
 
 /**
@@ -16,4 +19,17 @@ import dagger.Component;
 public interface WalletComponent {
 	
 	void inject(WalletActivity activity);
+	
+	@Component.Builder
+	interface Builder {
+		
+		WalletComponent.Builder appComponent(AppComponent appComponent);
+		WalletComponent.Builder walletModule(WalletModule walletModule);
+		
+		@BindsInstance
+		WalletComponent.Builder provideContext(Context mContext);
+		
+		WalletComponent build();
+	}
+	
 }
