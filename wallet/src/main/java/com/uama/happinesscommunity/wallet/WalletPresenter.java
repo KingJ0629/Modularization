@@ -1,6 +1,7 @@
 package com.uama.happinesscommunity.wallet;
 
-import com.uama.happinesscommunity.wallet.model.WalletBean;
+import com.uama.happinesscommunity.common.utils.L;
+import com.uama.happinesscommunity.wallet.model.Wallet;
 import com.uama.happinesscommunity.wallet.model.WalletDataSource;
 import com.uama.happinesscommunity.wallet.model.WalletRepository;
 
@@ -31,7 +32,12 @@ public class WalletPresenter extends WalletContract.Presenter {
 		// M层请求数据，M层保证数据渠道的多样性
 		mWalletRepository.getWalletList(new WalletDataSource.LoadWalletListCallback() {
 			@Override
-			public void onWalletListLoaded(List<WalletBean> list) {
+			public void onWalletListLoaded(List<Wallet> list) {
+				
+				if (list.size() > 0) {
+					L.i("Room demo : " + list.get(0).getName());
+				}
+				
 				// 回调V层
 				getView().loadView(list);
 			}

@@ -1,7 +1,7 @@
 package com.uama.happinesscommunity.wallet;
 
 import com.uama.happinesscommunity.base.BasePresenter;
-import com.uama.happinesscommunity.wallet.model.WalletBean;
+import com.uama.happinesscommunity.wallet.model.Wallet;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public interface WalletContract {
 		/**
 		 * loadView
 		 */
-		void loadView(List<WalletBean> list);
+		void loadView(List<Wallet> list);
 	}
 	
 	abstract class Presenter extends BasePresenter<View> {

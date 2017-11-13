@@ -7,7 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.uama.happinesscommunity.arouter.constant.ARouterConstant;
 import com.uama.happinesscommunity.common.utils.L;
-import com.uama.happinesscommunity.wallet.model.WalletBean;
+import com.uama.happinesscommunity.wallet.model.Wallet;
 
 import java.util.List;
 
@@ -41,7 +41,7 @@ public class WalletActivity extends WalletMVPBaseActivity<WalletContract.View, W
 	}
 	
 	@Override
-	public void loadView(List<WalletBean> list) {
+	public void loadView(List<Wallet> list) {
 		L.i("msg", "WalletActivity MVP");
 	}
 }

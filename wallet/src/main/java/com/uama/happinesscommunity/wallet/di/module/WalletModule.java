@@ -3,7 +3,9 @@ package com.uama.happinesscommunity.wallet.di.module;
 import android.content.Context;
 
 import com.uama.happinesscommunity.wallet.di.scope.WalletActivityScope;
+import com.uama.happinesscommunity.wallet.model.WalletDao;
 import com.uama.happinesscommunity.wallet.model.WalletDataSource;
+import com.uama.happinesscommunity.wallet.model.WalletDatabase;
 import com.uama.happinesscommunity.wallet.model.WalletLocalDataSource;
 import com.uama.happinesscommunity.wallet.model.WalletRemoteDataSource;
 
@@ -22,8 +24,8 @@ public class WalletModule {
 	@Named("local")
 	@WalletActivityScope
 	@Provides
-	WalletDataSource provideWalletLocalDataSource(Context mContext) {
-		return new WalletLocalDataSource(mContext);
+	WalletDataSource provideWalletLocalDataSource(Context mContext, WalletDao walletDao) {
+		return new WalletLocalDataSource(mContext, walletDao);
 	}
 	
 	@Named("remote")
@@ -34,7 +36,13 @@ public class WalletModule {
 	}
 	
 	@Provides
-	public String providerString(){
+	public String provideString(){
 		return "data come from module";
+	}
+	
+	@WalletActivityScope
+	@Provides
+	WalletDao provideWalletDao(Context mContext) {
+		return WalletDatabase.getInstance(mContext).userDao();
 	}
 }

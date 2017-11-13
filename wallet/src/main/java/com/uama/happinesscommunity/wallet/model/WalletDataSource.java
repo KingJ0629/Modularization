@@ -15,7 +15,7 @@ public interface WalletDataSource {
 	 */
 	interface LoadWalletListCallback {
 		
-		void onWalletListLoaded(List<WalletBean> list);
+		void onWalletListLoaded(List<Wallet> list);
 		
 		void onWalletListNotAvailable();
 	}
@@ -25,7 +25,7 @@ public interface WalletDataSource {
 	 */
 	interface GetWalletCallback {
 		
-		void onWalletLoaded(WalletBean bean);
+		void onWalletLoaded(Wallet bean);
 		
 		void onWalletNotAvailable();
 	}

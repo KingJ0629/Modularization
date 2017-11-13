@@ -13,7 +13,7 @@ public class WalletRemoteDataSource implements WalletDataSource {
 	@Override
 	public void getWalletList(@NonNull LoadWalletListCallback callback) {
 		// 请求远程数据
-		callback.onWalletListLoaded(new ArrayList<WalletBean>());
+		callback.onWalletListLoaded(new ArrayList<Wallet>());
 	}
 	
 	@Override

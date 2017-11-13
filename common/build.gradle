@@ -60,4 +60,10 @@ dependencies {
 
     // Fresco
     compile "com.facebook.fresco:fresco:$rootProject.frescoVersion"
+
+    // room
+    compile ("android.arch.persistence.room:runtime:$rootProject.room") {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.room"
 }

@@ -3,8 +3,6 @@ package com.uama.happinesscommunity.wallet.model;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import java.util.ArrayList;
-
 import static dagger.internal.Preconditions.checkNotNull;
 
 /**
@@ -13,14 +11,38 @@ import static dagger.internal.Preconditions.checkNotNull;
  */
 public class WalletLocalDataSource implements WalletDataSource {
 	
-	public WalletLocalDataSource(@NonNull Context context) {
+	WalletDao mWalletDao;
+	
+	public WalletLocalDataSource(@NonNull Context context, WalletDao walletDao) {
 		checkNotNull(context);
+		this.mWalletDao = walletDao;
+		
+		{
+			// 假数据
+			final Wallet wallet = new Wallet("1", "我是假数据");
+			new Thread() {
+				@Override
+				public void run() {
+					super.run();
+					
+					mWalletDao.insertUser(wallet);
+				}
+			}.start();
+		}
 	}
 	
 	@Override
-	public void getWalletList(@NonNull LoadWalletListCallback callback) {
-		// 请求本地数据
-		callback.onWalletListLoaded(new ArrayList<WalletBean>());
+	public void getWalletList(@NonNull final LoadWalletListCallback callback) {
+		
+		new Thread() {
+			@Override
+			public void run() {
+				super.run();
+				
+				// 请求本地数据
+				callback.onWalletListLoaded(mWalletDao.getUser());
+			}
+		}.start();
 	}
 	
 	@Override

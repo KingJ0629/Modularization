@@ -27,7 +27,7 @@ public class WalletRepository implements WalletDataSource {
 	/**
 	 * 缓存数据
 	 */
-	Map<String, WalletBean> mCachedData;
+	Map<String, Wallet> mCachedData;
 	
 	/**
 	 * 是否有本地数据
@@ -57,7 +57,7 @@ public class WalletRepository implements WalletDataSource {
 			 */
 			mTasksLocalDataSource.getWalletList(new LoadWalletListCallback() {
 				@Override
-				public void onWalletListLoaded(List<WalletBean> list) {
+				public void onWalletListLoaded(List<Wallet> list) {
 					callback.onWalletListLoaded(list);
 				}
 				
@@ -72,7 +72,7 @@ public class WalletRepository implements WalletDataSource {
 			 */
 			mTasksRemoteDataSource.getWalletList(new LoadWalletListCallback() {
 				@Override
-				public void onWalletListLoaded(List<WalletBean> list) {
+				public void onWalletListLoaded(List<Wallet> list) {
 					callback.onWalletListLoaded(list);
 				}
 				

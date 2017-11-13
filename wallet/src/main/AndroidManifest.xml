@@ -6,8 +6,7 @@
     <application android:allowBackup="true"
                  android:label="@string/wallet_app_name"
                  android:supportsRtl="true"
-                 tools:replace="android:label"
-    >
+                 tools:replace="android:label">
 
         <activity
             android:name="com.uama.happinesscommunity.wallet.WalletActivity"
