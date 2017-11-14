@@ -1,1 +1,1 @@
-include ':app', ':common', ':life', ':wallet'
+include ':app', ':common', ':life', ':wallet', ':processor'

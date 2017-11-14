@@ -22,7 +22,7 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
 /**
- * The Room database that contains the Users table
+ * The Room database that contains the Wallets table
  */
 @Database(entities = {Wallet.class}, version = 1, exportSchema = false)
 public abstract class WalletDatabase extends RoomDatabase {

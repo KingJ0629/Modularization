@@ -1,0 +1,33 @@
+apply plugin: 'java'
+
+dependencies {
+    compile 'com.google.auto.service:auto-service:1.0-rc2'
+    compile 'com.squareup:javapoet:1.9.0'
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+task clearJar(type: Delete) {
+    delete 'build/libs/autoProcessor.jar'
+    delete 'libs/autoProcessor.jar'
+}
+
+//打包任务
+task makeJar(type:org.gradle.api.tasks.bundling.Jar) {
+    baseName('autoProcessor.jar')
+    //从哪里打包class文件
+    from('build/intermediates/classes/debug/com/uama/happinesscommunity/processor')
+    //打包到jar后的目录结构
+    into('com/uama/happinesscommunity/processor/')
+    //去掉不需要打包的目录和文件
+    exclude('BuildConfig.class', 'R.class')
+    //去掉R$开头的文件
+    exclude{ it.name.startsWith('R$')}
+}
+
+makeJar.dependsOn(clearJar, build)
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
