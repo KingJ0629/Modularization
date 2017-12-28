@@ -14,7 +14,7 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
+                arguments = [ moduleName : project.getName(), eventBusIndex : 'com.uama.happinesscommunity.modularization.AppEventBusIndex' ]
             }
         }
     }
@@ -45,7 +45,7 @@ dependencies {
     compile project(':life')
     compile project(':wallet')
 
-    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterAnnotationVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    annotationProcessor "org.greenrobot:eventbus-annotation-processor:$rootProject.eventBus"
 }
