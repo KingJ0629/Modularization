@@ -16,11 +16,8 @@ public abstract class CommonApplication extends DaggerApplication {
 	
 	public static Context context;
 	
-	private static CommonApplication instance;
-	
 	@Override
 	public void onCreate() {
-		instance = this;
 		context = getApplicationContext();
 		
 		super.onCreate();
@@ -33,9 +30,5 @@ public abstract class CommonApplication extends DaggerApplication {
 		
 		// Fresco init
 		UamaImageViewConfig.initialize(getApplicationContext());
-	}
-	
-	public static synchronized CommonApplication getInstance() {
-		return instance;
 	}
 }

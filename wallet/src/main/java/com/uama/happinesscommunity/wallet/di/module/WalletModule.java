@@ -9,6 +9,7 @@ import com.uama.happinesscommunity.wallet.model.WalletRemoteDataSource;
 
 import javax.inject.Named;
 
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
@@ -17,7 +18,7 @@ import dagger.Provides;
  * Description 钱包模块 提供依赖工厂
  */
 @Module
-public class WalletModule {
+public abstract class WalletModule {
 
 	Context mContext;
 	
@@ -27,10 +28,8 @@ public class WalletModule {
 
 	@Named("local")
 	@WalletActivityScope
-	@Provides
-	WalletDataSource provideWalletLocalDataSource() {
-		return new WalletLocalDataSource(mContext);
-	}
+	@Binds
+	abstract WalletDataSource provideWalletLocalDataSource(WalletLocalDataSource mWalletLocalDataSource);
 	
 	@Named("remote")
 	@WalletActivityScope
